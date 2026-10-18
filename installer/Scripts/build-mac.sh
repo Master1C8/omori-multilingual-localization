@@ -27,6 +27,7 @@ python3 - "$payload" "$app/Contents/Resources/PackageConfig.json" <<'PY'
 import json,sys,pathlib
 j=json.loads((pathlib.Path(sys.argv[1])/'payload-receipt.json').read_text());pathlib.Path(sys.argv[2]).write_text(json.dumps({'catalogSha256':j['catalogSha256']}))
 PY
+python3 Scripts/write_site_locale_manifest.py "$app/Contents/Resources" macos
 codesign --force --deep --sign - "$app"
 ditto -c -k --keepParent "$app" "$archive"
 echo "$app"

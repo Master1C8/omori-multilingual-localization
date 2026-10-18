@@ -128,3 +128,15 @@ frozen helper to read canonical project inputs. No live source helper is loaded 
 from the checkout. The finalizer uses no LLM, never launches a game or CrossOver,
 and reports waiting, building, complete or needs-attention to the saved status file.
 Its current process/lock identity must be reconciled before any retry.
+
+## Site archive language metadata
+
+All packaging entry points call `Scripts/write_site_locale_manifest.py` before
+signing or archiving. The site manifest declares the shared catalog, compressed
+object directory and a separate inventory for each of the 27 locales. Each
+inventory contains the exact locale file records and catalog fingerprint;
+manifest inventory hashes bind those records to this package. The producer
+verifies every referenced gzip object's packed hash, size and decompressed hash
+before writing metadata. The site audit proves structural presence; the local
+producer and archive readback establish complete object coverage. Repacking
+metadata does not replace gameplay QA or editorial acceptance.

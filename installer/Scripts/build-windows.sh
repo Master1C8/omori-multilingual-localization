@@ -20,6 +20,7 @@ python3 - "$payload" "$stage/Resources" <<'PY'
 import json,pathlib,sys
 p=pathlib.Path(sys.argv[1]);out=pathlib.Path(sys.argv[2]);j=json.loads((p/'payload-receipt.json').read_text());(out/'PackageConfig.json').write_text(json.dumps({'catalogSha256':j['catalogSha256']}));c=json.loads((p/'catalog.json').read_text());(out/'languages.tsv').write_text(''.join(l['code']+'\t'+l['name']+'\n' for l in c['locales']))
 PY
+python3 Scripts/write_site_locale_manifest.py "$stage/Resources" windows
 cp Windows/README.txt "$stage/README.txt"
 cd "$release_dir"
 /usr/bin/zip -q -r -X OMORI-Installer-Windows-1.0.0.zip 'OMORI Installer Windows'

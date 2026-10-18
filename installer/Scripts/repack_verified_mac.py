@@ -12,6 +12,8 @@ import shutil
 import subprocess
 import zipfile
 
+from write_site_locale_manifest import write_manifest
+
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -49,6 +51,7 @@ def main():
     resources.mkdir(parents=True)
     shutil.copytree(payload, resources / 'Payload')
     (resources / 'PackageConfig.json').write_text(json.dumps({'catalogSha256': receipt['catalogSha256']}) + '\n')
+    write_manifest(resources, 'macos')
     subprocess.run(['codesign', '--force', '--deep', '--sign', '-', str(app)], check=True)
     subprocess.run(['codesign', '--verify', '--deep', '--strict', str(app)], check=True)
     subprocess.run(['ditto', '-c', '-k', '--keepParent', str(app), str(archive)], check=True)
