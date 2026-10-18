@@ -160,3 +160,13 @@ inputs and were removed. Those records remain provenance, while the retained
 release payload is the current direct packaging input. Do not rerun the historical
 assembler against missing paths. Source data and binaries remain private local
 inputs unless separately authorized for publication.
+
+## Native launch verification
+
+Launch OMORI through Steam, then confirm that its native process is already
+running with Steam's required launch argument before attaching a UI inspector.
+Some inspection APIs automatically launch an absent app without arguments,
+which can produce a black window before the encrypted plugins load. Do not
+interpret that window as a translation failure. Regression: start from a closed
+game, launch through Steam, verify the process first, and then confirm the
+selected language in the rendered main menu. Never print the launch argument.
