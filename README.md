@@ -30,7 +30,12 @@ Editable game inputs, translations, glossaries and card manifests remain in
 in temporary snapshots is preserved under `source/recovered-development-sources/`;
 its original paths and hashes are recorded in the release cleanup receipt.
 Disposable build trees, run snapshots, test copies, downloaded tools and Python
-environments have been removed. Existing distributions and screenshots are retained.
+environments have been removed. Only the latest published Windows and macOS
+installer ZIPs remain in `dist/installer/1.0.0-site-20261019-02/`; earlier
+per-locale archives, older installer revisions and redundant unpacked stages
+have been removed. Screenshots, the tested build seed and release evidence
+are retained. The non-playable Spanish (Latin America) review snapshot is
+preserved as editable source in `translation/es-419/review-snapshot-0037/`.
 
 Third-party components retain their own license notices, including zlib under
 `installer/vendor/`. No license grant is made for the original game assets.
