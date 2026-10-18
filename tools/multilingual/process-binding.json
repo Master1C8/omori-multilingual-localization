@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "revision": "omori-shared-cli-1",
+  "steamBuild": "8879120",
+  "sourceLocale": "en",
+  "standard": "standard",
+  "stages": [
+    "scope",
+    "probe",
+    "source",
+    "glossary",
+    "translate-edit",
+    "editorial",
+    "resources",
+    "package",
+    "runtime",
+    "delivery"
+  ],
+  "references": [
+    {
+      "path": "/Users/antonkrutov/.codex/instructions/game-localization-prompt.md",
+      "sha256": "ff9d350389685ea11ee91f404c014c702c0d46fbb2fa4ac0f5a6b3652c66dd48"
+    },
+    {
+      "path": "/Users/antonkrutov/.codex/instructions/game-localization-audit-workflow.md",
+      "sha256": "d48c07764d092293837d679bf9ccdba082c5d7b665b7db43d0e23e080e3af4b6"
+    },
+    {
+      "path": "/Users/antonkrutov/Desktop/SiteForMods/tools/codex-skills/shared/ROUTING.md",
+      "sha256": "9fb55daa8414071d5e4b5970ea72d897fba8257d598feacc2bfcd674ef3c9677"
+    },
+    {
+      "path": "/Users/antonkrutov/Desktop/SiteForMods/tools/codex-skills/shared/CHECKPOINT.md",
+      "sha256": "5d6b63f0bf3d6cba65dc9db230b03e9d1059c292227be868001d93a48f7d30bc"
+    }
+  ],
+  "localeSelection": "Required explicit --locale; no ru fallback. Canonical catalog is referenced, never replaced.",
+  "rendererMatrix": "renderer-matrix.json",
+  "entryPoint": "locale_tools.py",
+  "deliveryAdapter": "native-direct-overlay",
+  "editorialAlgorithm": "Universal semantic audit + dependency closure + independent diff + correction deltas; structural success never grants editorial acceptance.",
+  "runtime": "not-run",
+  "usage": "Assigned GPT-6.1 Sol/high; actual request telemetry unavailable in tool API; no agents or extra model calls."
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "copies": [
+    {
+      "file": "source_text_syntax.py",
+      "referencePath": "runtime/cli-localization/runs/20261014T124749Z-facf4e91/snapshot/reference-tools/source_text_syntax.py",
+      "referenceSha256": "dc89a99db14a2f11836d17a2b48ad310bbe7c0ffef1787f0b4ccab50de56b14b",
+      "originalPath": "tools/source_text_syntax.py",
+      "originalSha256": "dc89a99db14a2f11836d17a2b48ad310bbe7c0ffef1787f0b4ccab50de56b14b"
+    },
+    {
+      "file": "text_resource_adapter.py",
+      "referencePath": "runtime/cli-localization/runs/20261014T124749Z-facf4e91/snapshot/reference-tools/text_resource_adapter.py",
+      "referenceSha256": "20fd8a9768c5e0abb784deab6328994490a48556b6a53cb371416583c3752e13",
+      "originalPath": "tools/text_resource_adapter.py",
+      "originalSha256": "20fd8a9768c5e0abb784deab6328994490a48556b6a53cb371416583c3752e13"
+    },
+    {
+      "file": "unit_text_controls.py",
+      "referencePath": "runtime/cli-localization/runs/20261014T124749Z-facf4e91/snapshot/reference-tools/unit_text_controls.py",
+      "referenceSha256": "1f01622b0bfff797b997be1ce388c011c13116d056cdd290ce97df904180946d",
+      "originalPath": "tools/unit_text_controls.py",
+      "originalSha256": "1f01622b0bfff797b997be1ce388c011c13116d056cdd290ce97df904180946d"
+    },
+    {
+      "file": "script_resource_adapter.py",
+      "referencePath": "runtime/cli-localization/runs/20261014T124749Z-facf4e91/snapshot/reference-tools/script_resource_adapter.py",
+      "referenceSha256": "a41cfb2f8176a99ee32127f07265e9d635d6220102b1d77f35eb8c66db8a5b5b",
+      "originalPath": "tools/script_resource_adapter.py",
+      "originalSha256": "a41cfb2f8176a99ee32127f07265e9d635d6220102b1d77f35eb8c66db8a5b5b"
+    },
+    {
+      "file": "source_literal_values.cjs",
+      "referencePath": "runtime/cli-localization/runs/20261014T124749Z-facf4e91/snapshot/reference-tools/source_literal_values.cjs",
+      "referenceSha256": "138784fa38468d1e79ed34e73a6c15ae81f4c7055f57f6228dd59f7c9caa0de1",
+      "originalPath": "tools/source_literal_values.cjs",
+      "originalSha256": "138784fa38468d1e79ed34e73a6c15ae81f4c7055f57f6228dd59f7c9caa0de1"
+    },
+    {
+      "file": "encoded_dialogue.py",
+      "referencePath": "runtime/cli-localization/runs/20261014T124749Z-facf4e91/snapshot/reference-tools/encoded_dialogue.py",
+      "referenceSha256": "df054f2399c5ec0749b27715eae9c9000a01590b6f11371bcaa31b6686d1159b",
+      "originalPath": "tools/encoded_dialogue.py",
+      "originalSha256": "df054f2399c5ec0749b27715eae9c9000a01590b6f11371bcaa31b6686d1159b"
+    }
+  ],
+  "note": "Copied neutral technical primitives only; shared adaptations have distinct current hashes. No Russian wording copied."
+}

@@ -1,0 +1,36 @@
+# Source-only public repository. Keep local game assets, translation corpora,
+# private usage evidence, screenshots, logs and generated releases on disk.
+/source/
+/runtime/
+/runtime-probe/
+/build/
+/dist/
+/card/
+/publication/
+/history/
+/diagnostics/
+/glossary/
+/translation/
+/CLI_LOCALIZATION.md
+/LOCALIZATION_CHECKPOINT.md
+/OMORI_ASSETS.md
+/SOURCE_RESEARCH.md
+/TRANSLATION_AUTHORING.md
+/tools/python-deps/
+/tools/vendor/
+/tools/omori-source-ocr
+/tools/omori-source-ocr-cpu
+__pycache__/
+.venv/
+.venv-fonts/
+.build/
+.DS_Store
+*.o
+*.a
+*.exe
+*.zip
+*.dmg
+*.app/
+*.log
+.env
+.env.*

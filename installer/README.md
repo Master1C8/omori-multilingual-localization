@@ -1,0 +1,120 @@
+# OMORI Translation Installer
+
+Canonical project: `/Users/antonkrutov/Desktop/omori full translation mod`.
+The macOS app targets the native macOS game. The Windows app targets the Windows
+game; CrossOver is a Windows-development/test environment only. Steam application
+ID is **1150690**. **8879120** is the supported game content build, not its app ID.
+
+## Player flow
+
+Close OMORI, open the application, select a language and install. The app discovers
+Steam libraries; choose the game folder if necessary. After success, launch through
+Steam. Reopen the app to switch languages while the game is closed. All included
+languages are installed in isolated compressed package storage; one locale is active.
+No translator, model account, developer tools or API key is required by players.
+
+The adapter uses the native EN resource channel. Each locale includes overlapping
+native data, scripts, fonts and EN catalogs, so unpacking all locale ZIPs into one game
+folder is unsafe. Selection belongs in the installer for this adapter.
+
+## Base and changes
+
+Adapted from read-only `/Users/antonkrutov/Desktop/StardewTranslationInstaller`,
+inspected at `013686ba518c9e11140544a05443dc6ad4fadbdd`. That base was not modified.
+Reuse: SwiftUI shell/AppState flow, native Windows controls/worker/status interface,
+Steam-library discovery, folder fallback, hash/staging/ownership protection and
+universal macOS/native Windows packaging patterns.
+OMORI-specific: folder markers, Steam ID, branding, language selector, exact native
+payload restoration, per-file original backup and multi-file recovery journal.
+SMAPI, Content Patcher and Stardew language-switcher dependencies do not apply.
+
+The Windows UI uses a native C++ game adapter rather than the base PowerShell
+helper. CrossOver's bundled PowerShell executable returned success without executing
+an actual file-write probe. The native adapter avoids an extra engine/dependency and
+keeps the original UI/worker contract. It uses Windows BCrypt and statically linked
+zlib; no runtime download is required. Vendor pins/licenses are in `vendor/PROVENANCE.json`.
+
+## Packaging
+
+`Scripts/prepare_payload.py` consumes already verified locale ZIPs, checks their exact
+file sets/hashes, decrypts native resources for compression, and verifies that encoding
+with each original IV reproduces the delivered ciphertext. Fonts/raw files remain exact.
+Objects are deduplicated by plaintext SHA256 and gzip-compressed. No wording is generated
+and no native compilation/editorial review is rerun. The catalog records each locale's
+actual source ZIP hash and review state; technical candidates are not editorial acceptance.
+The app and native Windows helper reconstruct and hash every selected output before writes.
+
+```
+python3 -B installer/Scripts/prepare_payload.py --output build/installer/NEW_PAYLOAD
+installer/Scripts/build-mac.sh build/installer/NEW_PAYLOAD
+installer/Scripts/build-windows.sh build/installer/NEW_PAYLOAD
+```
+
+`--reuse build/installer/COMPLETED_PAYLOAD` verifies and reuses immutable compressed objects instead of recompressing unchanged translations. Font license text is exported separately. Owner-paused locales keep their verified packaged checkpoint available to the installer.
+
+`--allow-pending` is for explicitly incomplete development builds only. Preserve
+existing release artifacts and use a fresh revision. Build scripts reject incomplete payloads before compilation and preserve existing
+app/stage/archive paths. Set `OMORI_RELEASE_DIR` to a fresh revision for both platforms. macOS requires Command Line Tools/Swift; Windows cross-build requires
+Homebrew MinGW-w64 and the pinned static zlib build. Players need neither.
+
+## Storage and recovery
+
+The game resource root contains `.vnrevival-omori` with an exclusive install lock,
+content-addressed immutable backup blobs, compressed full-set packages, `state.json`
+and (only during installation/recovery) `journal.json`. Never remove this directory
+while a translation is installed. Unknown modifications, unsafe paths, links and
+unsupported originals stop the operation without overwriting those files.
+
+Before the first asset write, all planned before/after bytes are staged and hashed,
+and the durable journal records the previous install state. Each file replacement is
+atomic; the whole directory is not a filesystem transaction. On interruption, the next
+invocation first validates every affected current file against its before/after hash,
+restores the complete previous state, then proceeds with the requested selection.
+Unknown changes after interruption block recovery and remain untouched. A failure after
+state.json but before journal removal also restores the previous state. Saves and official
+non-EN packs are outside the allowed resource paths. Original EN resources are backed
+up before intentional replacement and restored for old-only paths on locale changes.
+
+## Validation boundaries
+
+Tests use disposable game folders and exercise actual file IO, gzip, native AES-CTR,
+hashes, locale persistence, switching, interruption and conflict handling. They do not
+establish game rendering, font shaping, dialogue correctness or route coverage. Keep
+native macOS, CrossOver, native Windows, signing/notarization and editorial acceptance
+separate in the final artifact receipt. A passing CrossOver test is not a native Windows
+runtime test. No game save is created or overwritten by installer tests.
+
+## Windows resource-root regression
+
+The Steam Windows build has an outer `package.json` with `main: www/index.html`
+and duplicate `data/System.KEL` outside `www`. Discovery follows the actual NW.js
+entry point: only a resource folder with `main: index.html`, that entry file and
+System.KEL is eligible. Selecting the game folder and selecting its persisted
+`www` folder resolve to the same resource root. Fixture checks include duplicate
+outer data and an outer index file, plus a direct-root positive control.
+
+## October17 resumed build
+
+The owner resumed both native app builds and authorized real Windows testing in
+CrossOver after installing OMORI build8879120. The Hebrew CLI lane remains active;
+batch editorial review remains deferred. Payload-v4 reuses the unchanged completed
+v2 catalog and all 6,774 compressed objects and adds six readable font licenses.
+It currently contains Russian plus25 packaged target locales; Hebrew remains pending.
+Previous incomplete build folders and earlier ZIPs remain preserved.
+
+## Final full-set assembly
+
+The owner confirmed native Mac OMORI runs in Russian on October17. This exercised
+the pre-existing byte-verified Russian overlay and main menu; the new Mac installer
+was opened read-only and was not applied over that existing mod. Windows installation,
+French switching and persisted selection passed in CrossOver, then the owner paused
+Windows testing before game rendering was accepted.
+
+`Scripts/finalize_after_hebrew.py` waits for Hebrew's actual packaged checkpoint,
+then uses its immutable helper/binary snapshot to create `dist/installer/1.0.0-r3/`
+with Russian and all26 target locales. It preserves prior builds and verifies every
+ZIP entry against the packaged stage. `prepare_payload.py --root PROJECT` allows a
+frozen helper to read canonical project inputs. No live source helper is loaded later
+from the checkout. The finalizer uses no LLM, never launches a game or CrossOver,
+and reports waiting, building, complete or needs-attention to the saved status file.
+Its current process/lock identity must be reconciled before any retry.

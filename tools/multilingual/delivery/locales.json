@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "es": {
+      "siteLocale": "es",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "es-419": {
+      "siteLocale": "es-419",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "pt-BR": {
+      "siteLocale": "pt-BR",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "de": {
+      "siteLocale": "de",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "fr": {
+      "siteLocale": "fr",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "tr": {
+      "siteLocale": "tr",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "pl": {
+      "siteLocale": "pl",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "zh-TW": {
+      "siteLocale": "zh-TW",
+      "nativeChannel": "en",
+      "script": "Traditional Han",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "it": {
+      "siteLocale": "it",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "th": {
+      "siteLocale": "th",
+      "nativeChannel": "en",
+      "script": "Thai",
+      "direction": "ltr",
+      "textRenderer": "thai-clusters-v1",
+      "renderingStatus": "blocked",
+      "mechanismBoundary": "Thai bases and dependent marks are submitted independently; cluster positioning is unavailable in the baseline path.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "vi": {
+      "siteLocale": "vi",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "id": {
+      "siteLocale": "id",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "uk": {
+      "siteLocale": "uk",
+      "nativeChannel": "en",
+      "script": "Cyrillic",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯІЇЄҐЈЉЊЋЂЏабвгдеёжзийклмнопрстуфхцчшщъыьэюяіїєґјљњћђџ",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "ar": {
+      "siteLocale": "ar",
+      "nativeChannel": "en",
+      "script": "Arabic",
+      "direction": "rtl",
+      "renderingStatus": "implemented-static-candidate-runtime-unverified",
+      "mechanismBoundary": "Logical contextual runs reach Canvas with rtl direction; native escape order retained. Typewriter and letter effects operate per run. Cross-style bidi, readability, wrapping and loading require final runtime QA. Unicode16 joining types preserve contextual forms across inline formatting via transient join controls; logical strings/indices are unchanged.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "١٢٣٤٥٦٧٨٩٠ضصثقفغعهخحجدشسيبلاتنمكطئءؤرىةوزظأإآًٌٍَُِّْ؛،؟ـ",
+      "nameInput": "Arabic-script default keyboard, native Latin shift layout and logical name storage; contextual name display; real input interaction/IME not-run",
+      "runtime": "not-run",
+      "visual": "not-run",
+      "textRenderer": "arabic-context-runs-v1",
+      "keyboardLayouts": {
+        "default": [
+          [
+            "`",
+            "١",
+            "٢",
+            "٣",
+            "٤",
+            "٥",
+            "٦",
+            "٧",
+            "٨",
+            "٩",
+            "٠",
+            "-",
+            "=",
+            "{bksp}"
+          ],
+          [
+            "ض",
+            "ص",
+            "ث",
+            "ق",
+            "ف",
+            "غ",
+            "ع",
+            "ه",
+            "خ",
+            "ح",
+            "ج",
+            "د",
+            "\\"
+          ],
+          [
+            "{lock}",
+            "ش",
+            "س",
+            "ي",
+            "ب",
+            "ل",
+            "ا",
+            "ت",
+            "ن",
+            "م",
+            "ك",
+            "ط"
+          ],
+          [
+            "ئ",
+            "ء",
+            "ؤ",
+            "ر",
+            "ى",
+            "ة",
+            "و",
+            "ز",
+            "ظ",
+            "أ",
+            "إ",
+            "آ",
+            "{confirm}",
+            "{space}"
+          ],
+          [
+            "َ",
+            "ً",
+            "ُ",
+            "ٌ",
+            "ِ",
+            "ٍ",
+            "ْ",
+            "ّ",
+            "؛",
+            "،",
+            "؟",
+            "ـ"
+          ]
+        ]
+      },
+      "renderingCharacters": "‍"
+    },
+    "cs": {
+      "siteLocale": "cs",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "hu": {
+      "siteLocale": "hu",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "nl": {
+      "siteLocale": "nl",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "fa": {
+      "siteLocale": "fa",
+      "nativeChannel": "en",
+      "script": "Arabic",
+      "direction": "rtl",
+      "renderingStatus": "implemented-static-candidate-runtime-unverified",
+      "mechanismBoundary": "Logical contextual runs reach Canvas with rtl direction; native escape order retained. Typewriter and letter effects operate per run. Cross-style bidi, readability, wrapping and loading require final runtime QA. Unicode16 joining types preserve contextual forms across inline formatting via transient join controls; logical strings/indices are unchanged.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "۱۲۳۴۵۶۷۸۹۰ضصثقفغعهخحجچپشسیبلاتنمکگظطزرذدئوءآژؤأإيكَُِّْ؛،؟",
+      "nameInput": "Arabic-script default keyboard, native Latin shift layout and logical name storage; contextual name display; real input interaction/IME not-run",
+      "runtime": "not-run",
+      "visual": "not-run",
+      "textRenderer": "arabic-context-runs-v1",
+      "keyboardLayouts": {
+        "default": [
+          [
+            "`",
+            "۱",
+            "۲",
+            "۳",
+            "۴",
+            "۵",
+            "۶",
+            "۷",
+            "۸",
+            "۹",
+            "۰",
+            "-",
+            "=",
+            "{bksp}"
+          ],
+          [
+            "ض",
+            "ص",
+            "ث",
+            "ق",
+            "ف",
+            "غ",
+            "ع",
+            "ه",
+            "خ",
+            "ح",
+            "ج",
+            "چ",
+            "پ"
+          ],
+          [
+            "{lock}",
+            "ش",
+            "س",
+            "ی",
+            "ب",
+            "ل",
+            "ا",
+            "ت",
+            "ن",
+            "م",
+            "ک",
+            "گ"
+          ],
+          [
+            "ظ",
+            "ط",
+            "ز",
+            "ر",
+            "ذ",
+            "د",
+            "ئ",
+            "و",
+            "ء",
+            "آ",
+            "{confirm}",
+            "{space}"
+          ],
+          [
+            "ژ",
+            "ؤ",
+            "أ",
+            "إ",
+            "ي",
+            "ك",
+            "َ",
+            "ِ",
+            "ُ",
+            "ّ",
+            "ْ",
+            "؛",
+            "،",
+            "؟"
+          ]
+        ]
+      },
+      "renderingCharacters": "‍"
+    },
+    "ro": {
+      "siteLocale": "ro",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "hi": {
+      "siteLocale": "hi",
+      "nativeChannel": "en",
+      "script": "Devanagari",
+      "direction": "ltr",
+      "renderingStatus": "implemented-static-candidate-runtime-unverified",
+      "mechanismBoundary": "Logical Devanagari runs reach the Canvas shaper intact. Native command order and source indices remain; style-straddling cluster marks paint with their base and are not painted twice. Typewriter/effects operate per run. Font loading, keyboard scrolling, layout and readability require deferred runtime QA.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "अआइईउऊऋएऐऍऑओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहािीुूृेैॅॉोौंँः़्ऽ।०१२३४५६७८९",
+      "nameInput": "Hindi default keyboard with native selectable scrolling, retained native Latin shift, logical name storage and whole-name draw; runtime input/IME not-run",
+      "runtime": "not-run",
+      "visual": "not-run",
+      "textRenderer": "devanagari-context-runs-v1",
+      "keyboardLayouts": {
+        "default": [
+          [
+            "अ",
+            "आ",
+            "इ",
+            "ई",
+            "उ",
+            "ऊ",
+            "ऋ",
+            "ए",
+            "ऐ",
+            "ऍ",
+            "ऑ",
+            "ओ",
+            "औ",
+            "{bksp}"
+          ],
+          [
+            "क",
+            "ख",
+            "ग",
+            "घ",
+            "ङ",
+            "च",
+            "छ",
+            "ज",
+            "झ",
+            "ञ",
+            "ट",
+            "ठ",
+            "ड",
+            "{lock}"
+          ],
+          [
+            "ढ",
+            "ण",
+            "त",
+            "थ",
+            "द",
+            "ध",
+            "न",
+            "प",
+            "फ",
+            "ब",
+            "भ",
+            "म",
+            "य",
+            "{confirm}"
+          ],
+          [
+            "र",
+            "ल",
+            "व",
+            "श",
+            "ष",
+            "स",
+            "ह",
+            "ा",
+            "ि",
+            "ी",
+            "ु",
+            "ू",
+            "ृ",
+            "{space}"
+          ],
+          [
+            "े",
+            "ै",
+            "ॅ",
+            "ॉ",
+            "ो",
+            "ौ",
+            "ं",
+            "ँ",
+            "ः",
+            "्",
+            "़",
+            "ऽ",
+            "।"
+          ],
+          [
+            "०",
+            "१",
+            "२",
+            "३",
+            "४",
+            "५",
+            "६",
+            "७",
+            "८",
+            "९"
+          ]
+        ]
+      }
+    },
+    "fil": {
+      "siteLocale": "fil",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "el": {
+      "siteLocale": "el",
+      "nativeChannel": "en",
+      "script": "Greek",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωςάέήίόύώϊϋΐΰ",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "bg": {
+      "siteLocale": "bg",
+      "nativeChannel": "en",
+      "script": "Cyrillic",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯІЇЄҐЈЉЊЋЂЏабвгдеёжзийклмнопрстуфхцчшщъыьэюяіїєґјљњћђџ",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "sr": {
+      "siteLocale": "sr",
+      "nativeChannel": "en",
+      "script": "Cyrillic",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯІЇЄҐЈЉЊЋЂЏабвгдеёжзийклмнопрстуфхцчшщъыьэюяіїєґјљњћђџ",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "sw": {
+      "siteLocale": "sw",
+      "nativeChannel": "en",
+      "script": "Latin",
+      "direction": "ltr",
+      "renderingStatus": "unverified",
+      "mechanismBoundary": "Static source preserves Unicode strings; no target-font or native visual evidence exists for this locale.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĘęĚěĞğİıŁłŃńŇňŐőŔŕŘřŚśŞşŠšŤťŮůŰűŹźŻżŽžȘșȚțƠơƯư",
+      "nameInput": "native EN keyboard plus configured glyph row; IME and complex-script input unverified",
+      "runtime": "not-run",
+      "visual": "not-run"
+    },
+    "he": {
+      "siteLocale": "he",
+      "nativeChannel": "en",
+      "script": "Hebrew",
+      "direction": "rtl",
+      "renderingStatus": "implemented-static-candidate-runtime-unverified",
+      "mechanismBoundary": "Shared RTL contextual-run adapter with Hebrew detection and no Arabic joining insertion. Canvas receives logical runs inside Unicode RTL embeddings; mixed Latin/digits stay logical. Cross-style layout, marks, wrapping and name input require runtime QA.",
+      "fontRoles": [
+        "GameFont",
+        "OMORI_GAME",
+        "OMORI_GAME2"
+      ],
+      "keyboardExtra": "אבגדהוזחטיךכלםמןנסעףפץצקרשתִֶּ־״",
+      "nameInput": "Hebrew default keyboard, native Latin shift layout, logical saved names and RTL contextual name display; IME/runtime unverified",
+      "runtime": "not-run",
+      "visual": "not-run",
+      "textRenderer": "hebrew-context-runs-v1",
+      "keyboardLayouts": {
+        "default": [
+          [
+            "`",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "0",
+            "-",
+            "=",
+            "{bksp}"
+          ],
+          [
+            "/",
+            "'",
+            "ק",
+            "ר",
+            "א",
+            "ט",
+            "ו",
+            "ן",
+            "ם",
+            "פ",
+            "[",
+            "]",
+            "\\"
+          ],
+          [
+            "{lock}",
+            "ש",
+            "ד",
+            "ג",
+            "כ",
+            "ע",
+            "י",
+            "ח",
+            "ל",
+            "ך",
+            "ף",
+            ","
+          ],
+          [
+            "ז",
+            "ס",
+            "ב",
+            "ה",
+            "נ",
+            "מ",
+            "צ",
+            "ת",
+            "ץ",
+            ".",
+            "{confirm}",
+            "{space}"
+          ],
+          [
+            "ִ",
+            "ֶ",
+            "ּ",
+            "־",
+            "״"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "taskId": {"type": "string"},
+    "role": {"type": "string", "enum": ["author", "editor", "reviewer", "resources", "package"]},
+    "status": {"type": "string", "enum": ["continue", "blocked", "stage-complete"]},
+    "summary": {"type": "string"},
+    "receipt": {"type": "string"}
+  },
+  "required": ["taskId", "role", "status", "summary", "receipt"]
+}

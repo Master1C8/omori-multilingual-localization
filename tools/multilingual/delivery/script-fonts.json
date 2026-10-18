@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "fonts": [
+    {
+      "locales": [
+        "th"
+      ],
+      "family": "Noto Sans Thai",
+      "destination": "fonts/Locale-Thai.ttf",
+      "font": {
+        "path": "source/font-reference/Thai-NotoSansThai[wdth,wght].ttf",
+        "sha256": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8"
+      },
+      "license": {
+        "path": "source/font-reference/Thai-OFL.txt",
+        "sha256": "2e98fd23a52d253db8612cd5942c8f2ff4111b21d2367050fdca91d8ccc374a0"
+      },
+      "provenance": {
+        "path": "source/font-reference/Thai-provenance-v1.json",
+        "sha256": "e76ce2bfdc04013e8300a29d986d9dce5d52eed351fc192bade8751af239502a"
+      },
+      "rendering": "not-run; owner accepted static preparation"
+    },
+    {
+      "locales": [
+        "ar",
+        "fa"
+      ],
+      "family": "Noto Sans Arabic",
+      "destination": "fonts/Locale-Arabic.ttf",
+      "font": {
+        "path": "source/font-reference/Arabic-NotoSansArabic[wdth,wght].ttf",
+        "sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e"
+      },
+      "license": {
+        "path": "source/font-reference/Arabic-OFL.txt",
+        "sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96"
+      },
+      "provenance": {
+        "path": "source/font-reference/Arabic-provenance-v1.json",
+        "sha256": "3bc2a26d1dcf04ffe17af231b4ce1bc85ae4aa0c91d39efdb866714eb433e4a3"
+      },
+      "rendering": "not-run; contextual run adapter is a static candidate",
+      "contextCodepoints": [
+        8205
+      ],
+      "additionalInputs": [
+        {
+          "path": "source/font-reference/Unicode16-DerivedJoiningType.txt",
+          "sha256": "6bd08b97da66b70ccfdab105a352de2984e02625239ec5695422c99b33d854f0"
+        },
+        {
+          "path": "source/font-reference/Unicode-LICENSE-v19.txt",
+          "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+        },
+        {
+          "path": "source/font-reference/Unicode-joining-provenance-v19.json",
+          "sha256": "772cd259dcab7ba318fef3103c743ecd02d08a4c4b3ac83b82e8000a27ce11dc"
+        }
+      ]
+    },
+    {
+      "locales": [
+        "hi"
+      ],
+      "family": "Noto Sans Devanagari",
+      "destination": "fonts/Locale-Devanagari.ttf",
+      "font": {
+        "path": "source/font-reference/Devanagari-NotoSansDevanagari[wdth,wght].ttf",
+        "sha256": "9ce7b04f60e363d8870e5997744cf85cf69d38a4d7d129d364d92a3b14b461d7"
+      },
+      "license": {
+        "path": "source/font-reference/Devanagari-OFL.txt",
+        "sha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331"
+      },
+      "provenance": {
+        "path": "source/font-reference/Devanagari-provenance-v1.json",
+        "sha256": "7c2bb4849ef80334c0ed8512e0c5719dc94f4bb33f9777964d3be3416d01bd99"
+      },
+      "rendering": "not-run; contextual-run adapter is a static candidate"
+    },
+    {
+      "locales": [
+        "he"
+      ],
+      "family": "OMORI Hebrew Fallback",
+      "destination": "fonts/Locale-Hebrew.ttf",
+      "font": {
+        "path": "source/font-reference/Hebrew-OMORIHebrew-Regular.ttf",
+        "sha256": "0960bb033fe7a1083cdbd8f0a7ca651bbc0c3f54f2bdb0a11445024d0de52cd0"
+      },
+      "license": {
+        "path": "source/font-reference/Hebrew-OFL.txt",
+        "sha256": "9b9fe028b5ba74d231659a1bbaf0ed09b11e759d1ca6a070999e16d151616b47"
+      },
+      "provenance": {
+        "path": "source/font-reference/Hebrew-provenance-v1.json",
+        "sha256": "0cd6ec2b2ac963d497dac6203b21fa583f1f367610b683c842fd7f14393efc24"
+      },
+      "additionalInputs": [
+        {
+          "path": "source/font-reference/Hebrew-NotoSansHebrew[wdth,wght].ttf",
+          "sha256": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88"
+        },
+        {
+          "path": "source/font-reference/Hebrew-METADATA.pb",
+          "sha256": "14715b15694dcfaa11d8be07fbd6fe08724813f81ca26205e17e172f2031ab34"
+        },
+        {
+          "path": "tools/prepare_hebrew_font.py",
+          "sha256": "eb700c9e2e8b6f7a41d7071fccd51041641c9e5f1269422f74e6413677ed9aa7"
+        }
+      ],
+      "rendering": "not-run; owner accepted static preparation; regular400 static face and mark tables retained"
+    }
+  ]
+}

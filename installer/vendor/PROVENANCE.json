@@ -1,0 +1,14 @@
+{
+  "nlohmann-json": {
+    "version": "3.11.3",
+    "source": "https://raw.githubusercontent.com/nlohmann/json/v3.11.3/single_include/nlohmann/json.hpp",
+    "sha256": "9bea4c8066ef4a1c206b2be5a36302f8926f7fdc6087af5d20b417d0cf103ea6",
+    "license": "MIT, included in json.hpp"
+  },
+  "zlib": {
+    "version": "1.3.1",
+    "source": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
+    "archiveSha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+    "license": "zlib, included in zlib-1.3.1/README and zlib.h"
+  }
+}

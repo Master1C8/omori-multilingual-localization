@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {"type": "string", "enum": ["continue", "blocked", "prepared", "local-scope-complete"]},
+    "stage": {"type": "string", "enum": ["scope", "probe", "source", "glossary", "translate-edit", "editorial", "resources", "package", "runtime", "delivery"]},
+    "summary": {"type": "string"},
+    "blocker": {"type": "string"},
+    "next_action": {"type": "string"},
+    "evidence": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["status", "stage", "summary", "blocker", "next_action", "evidence"]
+}

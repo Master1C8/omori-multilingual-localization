@@ -1,0 +1,2 @@
+#import <AppKit/AppKit.h>
+int main(int argc,const char** argv){@autoreleasepool{if(argc!=2)return 1;pid_t pid=atoi(argv[1]);NSRunningApplication* app=[NSRunningApplication runningApplicationWithProcessIdentifier:pid];if(!app||![app.executableURL.path hasPrefix:@"/Users/antonkrutov/Library/Application Support/Steam/steamapps/common/OMORI/OMORI.app/"])return 2;BOOL ok=[app activateWithOptions:NSApplicationActivateAllWindows|NSApplicationActivateIgnoringOtherApps];printf("native game activation: %s\n",ok?"requested":"failed");return ok?0:3;}}

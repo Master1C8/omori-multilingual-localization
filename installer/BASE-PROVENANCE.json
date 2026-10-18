@@ -1,0 +1,17 @@
+{
+  "base": "/Users/antonkrutov/Desktop/StardewTranslationInstaller",
+  "commit": "013686ba518c9e11140544a05443dc6ad4fadbdd",
+  "inspectedFileSha256": {
+    "Sources/StardewTranslationInstaller/InstallerApp.swift": "7177b82bc99043eb5a1188f199ca785f1c28246bba4e9413b40f662ca22a2ccf",
+    "Sources/StardewTranslationInstaller/AppState.swift": "e617614bed9d6ba89e4d20761941aed55f045dedaf74d7cd36a4cecacd8d38ad",
+    "Sources/StardewTranslationInstaller/InstallerCore.swift": "fee8e37e03b37d5f0a19638d62f9861e9462ac2ad3614b7cbebf527704b7278f",
+    "Sources/StardewTranslationInstaller/DependencyInstaller.swift": "8727f28cfe9f9def45e6a9995219b6f8dcf31bf48a83cb908cd3b59b9cca3399",
+    "Scripts/build-app.sh": "1813b31b73ed53d96c345ad6ec94c0881d7953942e6f867e35c3427fdb26692e",
+    "Scripts/build-windows-release.sh": "d83895be094d9e08520e73916154501e675a372f4733e4972ddc12cdba02f490",
+    "Windows/StardewTranslationInstaller.c": "893e11567bd9041def074414d650af5e61f7aaa80d5b2d6950a21ceea6d581b9",
+    "Windows/install.ps1": "dccca3ebfa066661985e04f4838111aa5857880afe21836c1a79421e63b653b5"
+  },
+  "workingTreeStatus": "",
+  "baseModified": false,
+  "adaptation": "SwiftUI and native Windows shell; OMORI resource adapters and recovery; base unchanged"
+}
