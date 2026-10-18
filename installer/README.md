@@ -64,8 +64,9 @@ both architectures, the complete payload object hashes, ad hoc signing, and
 every ZIP entry against the staged app. Existing outputs are preserved. This
 avoids recompiling unchanged installer code when only locale resources change.
 The October 19 release uses this path after the current Swift Build backend
-failed to emit an Intel dependency file; its failed build diagnostics are
-retained locally. Repacking does not establish a new real-game runtime test.
+failed to emit an Intel dependency file. The resource-only packaging boundary
+is recorded in the release receipts. Repacking does not establish a new
+real-game runtime test.
 
 ## Storage and recovery
 
@@ -140,3 +141,22 @@ verifies every referenced gzip object's packed hash, size and decompressed hash
 before writing metadata. The site audit proves structural presence; the local
 producer and archive readback establish complete object coverage. Repacking
 metadata does not replace gameplay QA or editorial acceptance.
+
+## Rebuilding after local cleanup
+
+The exact published source payload is `source/release-payload-1.0.0`. Use a fresh
+release directory; existing distributions are preserved:
+
+```sh
+OMORI_RELEASE_DIR="$PWD/dist/installer/NEW_REVISION" installer/Scripts/build-windows.sh source/release-payload-1.0.0
+python3 installer/Scripts/repack_verified_mac.py --seed dist/installer/1.0.0-site-20261019-02/build-seed --payload source/release-payload-1.0.0 --release dist/installer/NEW_REVISION
+```
+
+The Windows script recreates its build directory and pinned zlib static library
+from the retained vendor sources. Mac source compilation remains available via
+`build-mac.sh`; the resource-only repacker retains its existing tested-core boundary.
+The old QA catalogs referenced by historical final-input records were temporary
+inputs and were removed. Those records remain provenance, while the retained
+release payload is the current direct packaging input. Do not rerun the historical
+assembler against missing paths. Source data and binaries remain private local
+inputs unless separately authorized for publication.

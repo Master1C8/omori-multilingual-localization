@@ -11,7 +11,8 @@ windres=/opt/homebrew/bin/x86_64-w64-mingw32-windres
 release_dir="${OMORI_RELEASE_DIR:-$project_dir/../dist/installer/1.0.0}"
 stage="$release_dir/OMORI Installer Windows"
 [[ ! -e "$stage" && ! -e "$release_dir/OMORI-Installer-Windows-1.0.0.zip" ]] || { echo 'Preserve existing release; select a new revision' >&2; exit 1; }
-mkdir -p "$stage/Resources"
+mkdir -p "$stage/Resources" "$project_dir/../build/installer"
+make -C vendor/zlib-1.3.1 CC="$compiler" AR=/opt/homebrew/bin/x86_64-w64-mingw32-ar RANLIB=/opt/homebrew/bin/x86_64-w64-mingw32-ranlib libz.a
 "$cpp" -std=c++17 -O2 -s -Wall -Wextra -Wno-misleading-indentation -municode -static -static-libgcc -static-libstdc++ Windows/OmoriInstallHelper.cpp -Ivendor/zlib-1.3.1 vendor/zlib-1.3.1/libz.a -o "$stage/Resources/OmoriInstallHelper.exe" -lbcrypt -ladvapi32
 "$windres" Windows/Installer.rc -O coff -o ../build/installer/windows-resources.o
 "$compiler" -std=c11 -O2 -s -Wall -Wextra -Werror -municode -mwindows Windows/OmoriTranslationInstaller.c ../build/installer/windows-resources.o -o "$stage/OMORI Translation Installer.exe" -lcomctl32 -lshell32 -lole32 -luuid

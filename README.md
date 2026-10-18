@@ -18,12 +18,19 @@ archives are excluded. Full localization editorial review and native Windows
 gameplay verification remain separate from the existing native macOS visual
 checks and installer fixture tests. This project is unaffiliated with OMOCAT.
 
-For a release assembled from completed native-QA records, use
-`installer/Scripts/assemble_reviewed_payload.py` with the pinned final-inputs
-and completion files, then pass its output to the existing platform build
-scripts. It selects each locale's exact tested row, verifies the reconstructed
-bytes, and retains that locale's editorial status. A later single-locale test
-payload must never replace the complete tested language set.
+The exact published 27-language payload is retained locally at
+`source/release-payload-1.0.0`. Pass it directly to either platform build script;
+no old `build/` or `runtime/` folder is needed. The current distributions, tested
+app seed and compact release evidence are in
+`dist/installer/1.0.0-site-20261019-02/`. These private local inputs and generated
+artifacts remain excluded from this source-only public repository.
+
+Editable game inputs, translations, glossaries and card manifests remain in
+`source/`, `translation/`, `glossary/` and `card/`. Unique development code found
+in temporary snapshots is preserved under `source/recovered-development-sources/`;
+its original paths and hashes are recorded in the release cleanup receipt.
+Disposable build trees, run snapshots, test copies, downloaded tools and Python
+environments have been removed. Existing distributions and screenshots are retained.
 
 Third-party components retain their own license notices, including zlib under
 `installer/vendor/`. No license grant is made for the original game assets.
