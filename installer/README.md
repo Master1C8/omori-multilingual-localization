@@ -57,6 +57,16 @@ existing release artifacts and use a fresh revision. Build scripts reject incomp
 app/stage/archive paths. Set `OMORI_RELEASE_DIR` to a fresh revision for both platforms. macOS requires Command Line Tools/Swift; Windows cross-build requires
 Homebrew MinGW-w64 and the pinned static zlib build. Players need neither.
 
+For a payload-only update, `Scripts/repack_verified_mac.py` reuses the immutable
+universal app core pinned by `installer-finalize-r3-snapshot/manifest.json`, the
+same boundary used by the existing finalizer. It verifies both seed hashes,
+both architectures, the complete payload object hashes, ad hoc signing, and
+every ZIP entry against the staged app. Existing outputs are preserved. This
+avoids recompiling unchanged installer code when only locale resources change.
+The October 19 release uses this path after the current Swift Build backend
+failed to emit an Intel dependency file; its failed build diagnostics are
+retained locally. Repacking does not establish a new real-game runtime test.
+
 ## Storage and recovery
 
 The game resource root contains `.vnrevival-omori` with an exclusive install lock,
