@@ -41,8 +41,10 @@ def git(root, *args):
     return subprocess.check_output(["git", "-C", str(root), *args], text=True).strip()
 
 
-def verify_archive(archive, stage):
+def verify_archive(archive, stage, manifest=None):
     expected = {f"{stage.name}/{row['path']}": row for row in inventory(stage)}
+    if manifest is not None:
+        expected[manifest.name] = {"sizeBytes": manifest.stat().st_size, "sha256": digest(manifest)}
     with zipfile.ZipFile(archive) as package:
         entries = [item for item in package.infolist() if not item.is_dir()]
         if len(entries) != len({item.filename for item in entries}):
@@ -107,7 +109,16 @@ def main():
         raise ValueError("Payload changed during build; provenance not accepted")
     archive = release / "OMORI-Installer-Windows-1.0.0.zip"
     stage = release / "OMORI Installer Windows"
-    entries = verify_archive(archive, stage)
+    embedded = release / "vnrevival-release.json"
+    embedded.write_text(json.dumps({
+        "schemaVersion": 1, "gameSlug": "omori", "platform": "windows", "version": "1.0.0",
+        "sourceTreeClean": True, "sourceCommit": commit, "repositoryUrl": repository,
+        "sourceTree": tree, "payloadInventorySha256": fingerprint(materials),
+        "recipe": "installer/Scripts/build-provenance.py",
+    }, indent=2) + "\n")
+    with zipfile.ZipFile(archive, "a", compression=zipfile.ZIP_DEFLATED) as package:
+        package.write(embedded, embedded.name)
+    entries = verify_archive(archive, stage, embedded)
     executables = []
     for exe in [stage / "OMORI Translation Installer.exe", stage / "Resources/OmoriInstallHelper.exe"]:
         with exe.open("rb") as stream:

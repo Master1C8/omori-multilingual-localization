@@ -24,6 +24,23 @@ class ProvenanceTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "bytes differ"):
                 provenance.verify_archive(archive, stage)
 
+    def test_embedded_provenance_is_compared_with_final_archive(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            stage = root / "App"
+            stage.mkdir()
+            (stage / "file").write_bytes(b"accepted")
+            manifest = root / "vnrevival-release.json"
+            manifest.write_text('{"sourceCommit":"pinned"}')
+            archive = root / "release.zip"
+            with zipfile.ZipFile(archive, "w") as package:
+                package.write(stage / "file", "App/file")
+                package.write(manifest, manifest.name)
+            self.assertEqual(provenance.verify_archive(archive, stage, manifest), 2)
+            manifest.write_text('{"sourceCommit":"changed"}')
+            with self.assertRaisesRegex(ValueError, "bytes differ"):
+                provenance.verify_archive(archive, stage, manifest)
+
     def test_archive_rejects_missing_material(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
