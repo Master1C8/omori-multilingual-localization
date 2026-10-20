@@ -15,8 +15,8 @@ export SWIFTPM_MODULECACHE_OVERRIDE="$CLANG_MODULE_CACHE_PATH"
 arm_binary=""
 x86_binary=""
 for arch in arm64 x86_64; do
- swift build -c release --product OmoriInstaller --disable-sandbox --scratch-path "$project_dir/../build/installer/swift-$arch" --triple "$arch-apple-macosx14.0"
- bin_dir="$(swift build -c release --product OmoriInstaller --disable-sandbox --scratch-path "$project_dir/../build/installer/swift-$arch" --triple "$arch-apple-macosx14.0" --show-bin-path)"
+ swift build --build-system native -c release --product OmoriInstaller --disable-sandbox --scratch-path "$project_dir/../build/installer/swift-$arch" --triple "$arch-apple-macosx14.0"
+ bin_dir="$(swift build --build-system native -c release --product OmoriInstaller --disable-sandbox --scratch-path "$project_dir/../build/installer/swift-$arch" --triple "$arch-apple-macosx14.0" --show-bin-path)"
  if [[ "$arch" == arm64 ]]; then arm_binary="$bin_dir/OmoriInstaller"; else x86_binary="$bin_dir/OmoriInstaller"; fi
 done
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a local Windows release and record verifiable, unsigned provenance."""
+"""Build a local Windows or macOS release and record verifiable, unsigned provenance."""
 import argparse
 import hashlib
 import json
@@ -66,7 +66,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--payload", required=True, type=Path)
     parser.add_argument("--release", required=True, type=Path)
+    parser.add_argument("--platform", choices=["windows", "macos"], default="windows")
     args = parser.parse_args()
+    platform = args.platform
     root = Path(__file__).resolve().parents[2]
     payload, release = args.payload.resolve(), args.release.resolve()
     if not release.is_relative_to(root / "dist"):
@@ -90,16 +92,19 @@ def main():
         raise ValueError("Payload catalog does not match its receipt")
     materials = inventory(payload)
     tools = {}
-    for name in ["x86_64-w64-mingw32-gcc", "x86_64-w64-mingw32-g++",
+    tool_names = ["x86_64-w64-mingw32-gcc", "x86_64-w64-mingw32-g++",
                  "x86_64-w64-mingw32-windres", "x86_64-w64-mingw32-ar",
-                 "x86_64-w64-mingw32-ranlib", "make", "zip", "zsh", "python3"]:
+                 "x86_64-w64-mingw32-ranlib", "make", "zip", "zsh", "python3"] if platform == "windows" else [
+                     "swift", "clang", "xcrun", "lipo", "codesign", "ditto", "zsh", "python3"]
+    for name in tool_names:
         path = shutil.which(name)
         if not path:
             raise ValueError("Required tool missing: " + name)
         tools[name] = {"path": str(Path(path).resolve()), "sha256": digest(path)}
     started = datetime.now(timezone.utc).isoformat()
     release.mkdir(parents=True)
-    command = ["zsh", "installer/Scripts/build-windows.sh", str(payload)]
+    script = "build-windows.sh" if platform == "windows" else "build-mac.sh"
+    command = ["zsh", "installer/Scripts/" + script, str(payload)]
     with (release / "build.log").open("w") as log:
         subprocess.run(command, cwd=root, env={**os.environ, "OMORI_RELEASE_DIR": str(release)},
                        stdout=log, stderr=subprocess.STDOUT, check=True)
@@ -107,11 +112,11 @@ def main():
         raise ValueError("Source changed during build; provenance not accepted")
     if inventory(payload) != materials:
         raise ValueError("Payload changed during build; provenance not accepted")
-    archive = release / "OMORI-Installer-Windows-1.0.0.zip"
-    stage = release / "OMORI Installer Windows"
+    archive = release / ("OMORI-Installer-Windows-1.0.0.zip" if platform == "windows" else "OMORI-Installer-macOS-1.0.0.zip")
+    stage = release / ("OMORI Installer Windows" if platform == "windows" else "OMORI Translation Installer.app")
     embedded = release / "vnrevival-release.json"
     embedded.write_text(json.dumps({
-        "schemaVersion": 1, "gameSlug": "omori", "platform": "windows", "version": "1.0.0",
+        "schemaVersion": 1, "gameSlug": "omori", "platform": platform, "version": "1.0.0",
         "sourceTreeClean": True, "sourceCommit": commit, "repositoryUrl": repository,
         "sourceTree": tree, "payloadInventorySha256": fingerprint(materials),
         "recipe": "installer/Scripts/build-provenance.py",
@@ -120,7 +125,7 @@ def main():
         package.write(embedded, embedded.name)
     entries = verify_archive(archive, stage, embedded)
     executables = []
-    for exe in [stage / "OMORI Translation Installer.exe", stage / "Resources/OmoriInstallHelper.exe"]:
+    for exe in ([stage / "OMORI Translation Installer.exe", stage / "Resources/OmoriInstallHelper.exe"] if platform == "windows" else []):
         with exe.open("rb") as stream:
             if stream.read(2) != b"MZ":
                 raise ValueError("Missing PE executable")
@@ -130,14 +135,23 @@ def main():
             if stream.read(6) != b"PE\0\0\x64\x86":
                 raise ValueError("Expected Windows x86-64 executable")
         executables.append({"path": exe.relative_to(stage).as_posix(), "sha256": digest(exe)})
+    if platform == "macos":
+        exe = stage / "Contents/MacOS/OMORI Translation Installer"
+        architectures = subprocess.check_output(["lipo", "-archs", str(exe)], text=True).split()
+        if set(architectures) != {"arm64", "x86_64"}:
+            raise ValueError("Expected both macOS architectures")
+        subprocess.run(["codesign", "--verify", "--deep", "--strict", str(stage)], check=True)
+        executables.append({"path": exe.relative_to(stage).as_posix(), "sha256": digest(exe)})
+        tools["sdk"] = {"version": subprocess.check_output(["xcrun", "--show-sdk-version"], text=True).strip(),
+                        "swiftVersion": subprocess.check_output(["swift", "--version"], text=True).strip()}
     record = {
         "schemaVersion": 1, "version": "1.0.0", "publication": "not-published",
         "source": {"repository": repository, "commit": commit, "tree": tree,
                    "url": f"{repository}/tree/{commit}"},
-        "build": {"recipe": "installer/Scripts/build-provenance.py", "platform": "windows",
-                  "architecture": "x86_64", "startedAt": started,
+        "build": {"recipe": "installer/Scripts/build-provenance.py", "platform": platform,
+                  "architecture": "x86_64" if platform == "windows" else "x86_64+arm64", "startedAt": started,
                   "completedAt": datetime.now(timezone.utc).isoformat(),
-                  "method": "local cross-compilation on macOS", "tools": tools,
+                  "method": "local cross-compilation on macOS" if platform == "windows" else "local universal compilation on macOS", "tools": tools,
                   "logSha256": digest(release / "build.log")},
         "materials": {"payloadInventory": "payload-materials.json",
                       "inventorySha256": fingerprint(materials),
@@ -149,7 +163,7 @@ def main():
                      "executables": executables},
         "assurance": {"statement": "unsigned local build record",
                       "publisherSignature": None, "buildAttestation": None,
-                      "notarization": "not applicable to Windows",
+                      "notarization": "not applicable to Windows" if platform == "windows" else "not notarized; ad hoc signature verified",
                       "independentSecurityReview": None,
                       "runtimeTesting": "not performed by this build recipe"},
     }

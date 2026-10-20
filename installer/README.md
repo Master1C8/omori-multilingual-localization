@@ -170,3 +170,14 @@ which can produce a black window before the encrypted plugins load. Do not
 interpret that window as a translation failure. Regression: start from a closed
 game, launch through Steam, verify the process first, and then confirm the
 selected language in the rendered main menu. Never print the launch argument.
+
+## Exact-source macOS provenance
+
+For a new macOS archive, use `Scripts/build-provenance.py --platform macos`
+with the retained payload and a fresh release directory. The recipe compiles both
+architectures from the recorded clean, pushed commit, verifies the universal
+binary and ad hoc signature, and compares every ZIP file with the staged app.
+The macOS script explicitly selects SwiftPM's native build backend: the default
+Swift Build backend in Swift 6.4 previously failed to emit an Intel dependency
+file. Existing resource-only repacks retain their original provenance boundary.
+This build does not claim Apple notarization or a new gameplay acceptance run.
