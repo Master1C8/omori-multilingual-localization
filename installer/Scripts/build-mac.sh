@@ -29,5 +29,5 @@ j=json.loads((pathlib.Path(sys.argv[1])/'payload-receipt.json').read_text());pat
 PY
 python3 Scripts/write_site_locale_manifest.py "$app/Contents/Resources" macos
 codesign --force --deep --sign - "$app"
-ditto -c -k --keepParent "$app" "$archive"
+ditto -c -k --norsrc --noextattr --noqtn --keepParent "$app" "$archive"
 echo "$app"

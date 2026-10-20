@@ -181,3 +181,9 @@ The macOS script explicitly selects SwiftPM's native build backend: the default
 Swift Build backend in Swift 6.4 previously failed to emit an Intel dependency
 file. Existing resource-only repacks retain their original provenance boundary.
 This build does not claim Apple notarization or a new gameplay acceptance run.
+
+macOS ZIP packaging omits resource forks, extended attributes and quarantine
+metadata. These generated AppleDouble sidecars are not application resources.
+Regression: every final non-directory ZIP entry must match a staged file or the
+root release manifest, and the extracted application must retain a valid ad hoc
+signature. Extra `._` files must fail archive validation rather than be ignored.
