@@ -23,7 +23,11 @@ Localization Workbench is a separate development product, not this installer and
 not proof of the source revision used for a downloaded archive. Its maintenance is
 outside this project's release task. Do not use its repository HEAD as mod provenance.
 
-[Windows 1.0.0 and its build evidence are published](https://github.com/Master1C8/omori-multilingual-localization/releases/tag/windows-1.0.0-e7b6c0e32828).
+Published installer packages and build evidence:
+
+- [Windows 1.0.0](https://github.com/Master1C8/omori-multilingual-localization/releases/tag/windows-1.0.0-e7b6c0e32828).
+- [macOS 1.0.0 — Apple Silicon and Intel](https://github.com/Master1C8/omori-multilingual-localization/releases/tag/macos-1.0.0-376615c0a4aa).
+
 Follow [release verification](Documentation/release-verification.md) to download the
 installer, compare checksums and identify its exact source commit without running it.
 Original game assets and the retained translation payload are not published in this
