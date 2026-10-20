@@ -1,41 +1,55 @@
-# OMORI multilingual localization
+# OMORI — VN Revival Translation Installer
 
-Native Windows and macOS installers and development tools for the VN Revival
-OMORI localization. Supported Steam application: **1150690**; supported game
-content build: **8879120**.
+Native Windows and macOS installers for the VN Revival OMORI localization.
+The shared package contains 27 languages; the installer selects one active language
+while preserving the isolated packages. A licensed Steam copy of OMORI is required:
+application **1150690**, supported content build **8879120**. No model account or API
+key is needed to play with this standard localization.
 
-The installer includes 27 languages, installs their isolated packages, and lets
-the player select the active language. Players need a licensed copy of OMORI.
-No model account or API key is required.
+Windows uses a native x64 installer; the macOS application supports Apple silicon
+and Intel. Extract the whole Windows ZIP, retaining `Resources` beside the EXE.
+Close OMORI, open the installer, choose a language and install, then launch via Steam.
 
-Download the installer from [VN Revival](https://vnrevival.fun/ru/games/omori).
-See [installer documentation](installer/README.md) for the package format,
-build steps, protection of existing mods and saves, and validation boundaries.
+## Installation, recovery and development
 
-This repository contains installer and tooling source. Original game assets,
-extracted text, private task journals, local test evidence, and generated release
-archives are excluded. Full localization editorial review and native Windows
-gameplay verification remain separate from the existing native macOS visual
-checks and installer fixture tests. This project is unaffiliated with OMOCAT.
+Read [installer documentation](installer/README.md) for discovery, package format,
+source build commands and recovery. Keep `.vnrevival-omori` in the game's resource
+folder: it holds original backups and the recovery journal. Unknown changes block
+replacement; do not delete recovery data to force installation. Saves are outside
+the installer's permitted resource paths.
 
-The exact published 27-language payload is retained locally at
-`source/release-payload-1.0.0`. Pass it directly to either platform build script;
-no old `build/` or `runtime/` folder is needed. The current distributions, tested
-app seed and compact release evidence are in
-`dist/installer/1.0.0-site-20261019-02/`. These private local inputs and generated
-artifacts remain excluded from this source-only public repository.
+This repository is the installer/tooling source for the distributed OMORI mod.
+Localization Workbench is a separate development product, not this installer and
+not proof of the source revision used for a downloaded archive. Its maintenance is
+outside this project's release task. Do not use its repository HEAD as mod provenance.
 
-Editable game inputs, translations, glossaries and card manifests remain in
-`source/`, `translation/`, `glossary/` and `card/`. Unique development code found
-in temporary snapshots is preserved under `source/recovered-development-sources/`;
-its original paths and hashes are recorded in the release cleanup receipt.
-Disposable build trees, run snapshots, test copies, downloaded tools and Python
-environments have been removed. Only the latest published Windows and macOS
-installer ZIPs remain in `dist/installer/1.0.0-site-20261019-02/`; earlier
-per-locale archives, older installer revisions and redundant unpacked stages
-have been removed. Screenshots, the tested build seed and release evidence
-are retained. The non-playable Spanish (Latin America) review snapshot is
-preserved as editable source in `translation/es-419/review-snapshot-0037/`.
+[Release verification](Documentation/release-verification.md) describes the local
+provenance pilot and how to verify a ZIP without running either executable.
+Original game assets and the retained translation payload are not published in this
+source-only repository. The build record identifies those local inputs by hashes;
+public installer source alone is not enough to reconstruct the complete package.
 
-Third-party components retain their own license notices, including zlib under
-`installer/vendor/`. No license grant is made for the original game assets.
+## Downloads and project links
+
+- [Download and installation instructions](https://vnrevival.fun/ru/games/omori)
+- [VN Revival project](https://vnrevival.fun/info/about)
+- [Application privacy and security](https://vnrevival.fun/info/app-security)
+- [Source repository](https://github.com/Master1C8/omori-multilingual-localization)
+- [Report an issue](https://github.com/Master1C8/omori-multilingual-localization/issues) — include OS, game version, release version and archive SHA-256; omit saves, credentials and private logs.
+
+## Authorship and verification
+
+Maintained by [Anton / Master1C8](https://github.com/Master1C8) for VN Revival.
+Codex is an AI development and translation tool, not a human editor. Human review,
+Codex-assisted work and automated checks are separate activities; historical
+receipts describe only the work and revision they actually cover.
+
+Use the exact downloaded file's checksum and any recorded source-commit/build link
+on the game page. The repository's latest branch is not evidence of an older
+archive's source. SHA-256 proves byte identity; it is distinct from publisher
+signing, Apple notarization, a build attestation and an independent security review.
+This project is not affiliated with the original game's developer.
+
+[Historical working and build notes](Documentation/README-history-2026-10-20.md)
+are retained unchanged for development traceability. They do not replace the current
+download instructions or establish the provenance of newly generated files.

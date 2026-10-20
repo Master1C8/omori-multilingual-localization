@@ -7,5 +7,5 @@ its Windows game folder. After installation, click Launch game (Steam).
 Reopen this app to change the language while the game is closed.
 Originals and recovery data stay in .vnrevival-omori inside the game's resource folder.
 Do not remove that folder while a translation is installed.
-Translation packages are technical candidates; full editorial and visual review
-is tracked separately in the project and is not established by installation.
+For the release version, supported languages and checksum, see the OMORI page at
+https://vnrevival.fun/ru/games/omori
