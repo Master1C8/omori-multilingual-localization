@@ -44,3 +44,22 @@ and unique visible `OMORI` window. An unedited client capture with
 English baseline; it excludes the desktop and Windows activation watermark.
 Review the actual localized pixels again for each final result. Preserve the
 raw PNG and capture receipt; do not crop away desktop contamination afterward.
+
+## Final-archive acceptance evidence
+
+Bind every run to the SHA-256 of the final downloaded or prepared ZIP, and
+verify that the executed GUI/helper come from that extraction. An existing
+localized installation tests upgrade/switching; separately establish original
+resource hashes and no install state before claiming a clean installation.
+Preserve the original locale, protected metadata and saves before either test.
+Test interruption with the delivered helper, assert the intended failure message
+and actual partially changed files, then verify exact previous-state recovery.
+Restore the owner's original state and compare its owned files and saves.
+
+A visible `OMORI` window is not a rendered-menu readiness marker. On Windows 11
+ARM64 the October 20 final-archive test captured a black frame during startup
+before the French menu appeared. Preserve that diagnostic frame, inspect actual
+rendered state, and capture again only after the menu is present; do not credit
+a blank image or a fixed 15-second delay as launch success. Keep x64-on-ARM
+execution distinct from testing on native x64 hardware, and do not extrapolate
+a main-menu check into full-gameplay acceptance.
