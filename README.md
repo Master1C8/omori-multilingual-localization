@@ -23,8 +23,9 @@ Localization Workbench is a separate development product, not this installer and
 not proof of the source revision used for a downloaded archive. Its maintenance is
 outside this project's release task. Do not use its repository HEAD as mod provenance.
 
-[Release verification](Documentation/release-verification.md) describes the local
-provenance pilot and how to verify a ZIP without running either executable.
+[Windows 1.0.0 and its build evidence are published](https://github.com/Master1C8/omori-multilingual-localization/releases/tag/windows-1.0.0-e7b6c0e32828).
+Follow [release verification](Documentation/release-verification.md) to download the
+installer, compare checksums and identify its exact source commit without running it.
 Original game assets and the retained translation payload are not published in this
 source-only repository. The build record identifies those local inputs by hashes;
 public installer source alone is not enough to reconstruct the complete package.
