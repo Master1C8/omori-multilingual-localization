@@ -63,3 +63,14 @@ rendered state, and capture again only after the menu is present; do not credit
 a blank image or a fixed 15-second delay as launch success. Keep x64-on-ARM
 execution distinct from testing on native x64 hardware, and do not extrapolate
 a main-menu check into full-gameplay acceptance.
+
+When mixing GUI and direct-helper checks, read and reuse the exact `gameRoot`
+from the current protected state (including casing). The current helper compares
+this identity as a string, even on case-insensitive Windows. Do not substitute a
+manually capitalized equivalent path or rewrite protected metadata to bypass
+that guard. For a clean-baseline run, retain the previously resolved path before
+preserving the metadata directory. Regression: the Steam-resolved lower-case
+path and `C:\Program Files (x86)\Steam` name the same directory but a direct
+helper run with the second spelling creates a different recorded identity;
+the existing GUI correctly reports its identity mismatch before resource writes.
+Record this path-spelling limitation separately from installation/recovery results.
