@@ -34,3 +34,6 @@ __pycache__/
 *.log
 .env
 .env.*
+
+# Private player saves preserved during local artifact retirement.
+/PreservedSaves/
