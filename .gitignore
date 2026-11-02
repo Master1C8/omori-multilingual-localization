@@ -37,3 +37,7 @@ __pycache__/
 
 # Private player saves preserved during local artifact retirement.
 /PreservedSaves/
+
+# Downloaded private editing snapshots remain outside public Git.
+/.recovery/
+/_RECOVERY_MANIFEST.json
