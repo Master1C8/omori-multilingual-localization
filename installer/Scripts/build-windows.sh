@@ -2,7 +2,11 @@
 # Adapted from the proven VN Revival native Windows build script.
 set -euo pipefail
 project_dir="${0:A:h:h}"
-payload="${1:A}"
+payload="${1:-$project_dir/../source/release-payload-1.0.0}"
+payload="${payload:A}"
+if [[ "$payload" == "${project_dir:h}/source/release-payload-1.0.0" && ! -d "$payload" ]]; then
+ python3 -B "$project_dir/../scripts/restore_archival_inputs.py" --input release-payload-1.0.0
+fi
 [[ -f "$payload/payload-receipt.json" ]] || { echo 'Pass a completed payload folder' >&2; exit 1; }
 cd "$project_dir"
 compiler=/opt/homebrew/bin/x86_64-w64-mingw32-gcc

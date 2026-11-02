@@ -85,6 +85,9 @@ def main():
     commit, tree = git(root, "rev-parse", "HEAD"), git(root, "rev-parse", "HEAD^{tree}")
     if git(root, "rev-parse", "origin/main") != commit:
         raise ValueError("Push canonical main before preparing provenance")
+    if payload == root / "source/release-payload-1.0.0" and not payload.exists():
+        subprocess.run([sys.executable, "-B", str(root / "scripts/restore_archival_inputs.py"),
+                        "--input", "release-payload-1.0.0"], cwd=root, check=True)
     receipt = json.loads((payload / "payload-receipt.json").read_text())
     if receipt.get("pendingLocales") != [] or len(receipt.get("locales", [])) != 27:
         raise ValueError("Expected the complete retained payload")

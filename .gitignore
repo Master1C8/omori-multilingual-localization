@@ -1,5 +1,5 @@
-# Source-only public repository. Keep local game assets, translation corpora,
-# private usage evidence, screenshots, logs and generated releases on disk.
+# Public source repository. Private editable records stay local and in the
+# maintainer-only recovery draft; generated inputs/releases are restored on demand.
 /source/
 /runtime/
 /runtime-probe/
@@ -41,3 +41,5 @@ __pycache__/
 # Downloaded private editing snapshots remain outside public Git.
 /.recovery/
 /_RECOVERY_MANIFEST.json
+/_SOURCE_MANIFEST.json
+.venv-archival/

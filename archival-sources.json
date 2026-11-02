@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "repository": "Master1C8/omori-multilingual-localization",
+  "releaseTag": "private-editable-inputs-2026-11-03",
+  "asset": "OMORI-Source-Inputs-20261103.zip",
+  "archiveSha256": "8842bfc514832bb128361a079b7873818b6e919599512242bc817b9b161f1120",
+  "inventoryMember": "_SOURCE_MANIFEST.json",
+  "inventorySha256": "8e566ac29f20f35d0451393ca1d6cf2b6ef3174f92f248295b9bb0ed56def69b",
+  "groups": {
+    "translations": 8602,
+    "glossaries": 48,
+    "source-context": 4368,
+    "runtime-source": 4,
+    "editing-notes": 6,
+    "editable-fonts": 23
+  },
+  "private": true
+}
